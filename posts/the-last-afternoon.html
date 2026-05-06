@@ -10,37 +10,139 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .hero-image {
-      width: 100%;
-      max-height: 520px;
-      object-fit: cover;
-      object-position: center 40%;
-      display: block;
-      filter: brightness(0.75) saturate(0.8);
-    }
+    /* ---- Hero image ---- */
     .hero-image-wrap {
       position: relative;
       overflow: hidden;
+      max-height: 580px;
       background: var(--bg-card);
+    }
+    .hero-image {
+      width: 100%;
+      max-height: 580px;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      filter: brightness(0.65) saturate(0.75);
     }
     .hero-image-wrap::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent 40%,
-        var(--bg) 100%
-      );
+      background: linear-gradient(to bottom, transparent 45%, var(--bg) 100%);
       pointer-events: none;
     }
     .image-credit {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--text-dim);
       text-align: right;
-      padding: 0.4rem 1rem;
-      font-weight: 300;
-      letter-spacing: 0.04em;
+      padding: 0.35rem 1.5rem;
+      font-style: italic;
+    }
+
+    /* ---- Artistic decorators ---- */
+    .ornament {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 1rem;
+      letter-spacing: 0.5em;
+      margin: 3rem 0;
+      user-select: none;
+    }
+
+    /* ---- Big pull quote ---- */
+    .pull-quote {
+      margin: 3.5rem 0;
+      padding: 0;
+      border: none;
+      text-align: center;
+      background: none;
+    }
+    .pull-quote p {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(1.4rem, 3vw, 1.9rem) !important;
+      font-style: italic !important;
+      font-weight: 300 !important;
+      color: var(--gold) !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ---- Inline footnote ref ---- */
+    .ref {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      vertical-align: super;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    /* ---- Reference list ---- */
+    .ref-section {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .ref-section h2 {
+      font-size: 0.72rem !important;
+      letter-spacing: 0.15em !important;
+      text-transform: uppercase !important;
+      color: var(--text-dim) !important;
+      border: none !important;
+      margin: 0 0 1.5rem !important;
+    }
+    .ref-section ol {
+      margin-left: 1.2rem;
+      counter-reset: none;
+    }
+    .ref-section li {
+      font-size: 0.8rem !important;
+      color: var(--text-dim) !important;
+      margin-bottom: 0.6rem;
+      line-height: 1.6 !important;
+    }
+    .ref-section a {
+      color: var(--text-dim);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0.6;
+    }
+
+    /* ---- Tool list (artistic) ---- */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .tool-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+    }
+    .tool-item .tool-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .tool-item .tool-name {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gold);
+    }
+    .tool-item .tool-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 580px) {
+      .tool-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -55,6 +157,7 @@
 
   <article>
 
+    <!-- Post header -->
     <header class="post-header">
       <a href="../index.html" class="back-link">← Back to journal</a>
       <div class="post-meta">
@@ -62,161 +165,115 @@
         <span class="post-date">Week 10 — May 2026</span>
       </div>
       <h1>Project 2 Proposal:<br /><em>"The Last Afternoon"</em></h1>
-      <p class="post-subtitle">A mixed reality experience reconstructing a moment suspended between existence and memory.</p>
+      <p class="post-subtitle">A mixed reality experience that reconstructs a moment suspended between existence and memory.</p>
     </header>
 
+    <!-- Hero image -->
     <div class="hero-image-wrap">
-      <img class="hero-image" src="../Pic/image.png" alt="An empty room with afternoon light pouring through a doorway — a single chair at the threshold." />
+      <img class="hero-image" src="../Pic/image.png"
+        alt="An empty room with afternoon light pouring through a doorway — a single chair at the threshold." />
     </div>
     <p class="image-credit">Photo via Unsplash — free to use</p>
 
+    <!-- Article body -->
     <div class="post-body">
 
-      <h2>The Concept</h2>
+      <!-- Concept -->
+      <p>There is a specific kind of grief that has no name.</p>
 
-      <p>There is a specific kind of grief that has no name — the feeling of standing in a room you are about to leave forever, knowing that every familiar object around you will soon belong to someone else. You can see everything clearly, but it already feels like a memory.</p>
+      <p>It's the feeling of standing in a room you are about to leave forever — knowing that every familiar object around you will soon belong to someone else, or to no one. You can see everything clearly. But it already feels like a memory.</p>
 
-      <blockquote><p>"The room won't exist anymore. But for 2–3 minutes in VR, you'll be the last person to stand in it."</p></blockquote>
+      <div class="pull-quote">
+        <p>"The room won't exist anymore.<br />But for 2–3 minutes in VR,<br />you'll be the last person to stand in it."</p>
+      </div>
 
-      <p><strong>"The Last Afternoon"</strong> is a mixed reality experience set inside a childhood bedroom on the final afternoon before a family moves out. The room is intact — furniture, scattered objects, afternoon light through the window — but it is also somehow already gone. The user stands in the centre of this space, unable to interact, simply <em>present</em> in a moment that is suspended between existence and memory.</p>
+      <p><strong>"The Last Afternoon"</strong> is a mixed reality experience set inside a childhood bedroom on the final afternoon before a family moves out. The room is intact — furniture, scattered objects, afternoon light through the window. But it is also somehow already gone.</p>
 
-      <p>The experience lasts approximately <strong>2–3 minutes</strong>. There is no narrative arc, no beginning or end. Only the moment itself — ambient sound, soft light, the texture of familiar things — looping gently, like a photograph you can walk inside.</p>
+      <p>The user stands at the centre of this space for approximately <strong>2–3 minutes</strong>. There is no narrative. No beginning or end. Only the moment itself — ambient sound, soft light, the texture of familiar things — looping gently, like a photograph you can walk inside.</p>
 
-      <hr />
+      <div class="ornament">· · ·</div>
 
-      <h2>Connection to Course Concepts</h2>
+      <!-- Why it matters -->
+      <h2>Why this idea</h2>
 
-      <h3>Psychogeography &amp; the Emotional Weight of Space</h3>
+      <p>The project assignment asks us to think about <em>"a moment in time"</em> — not as a literal clock event, but as something felt: a transition, a suspension, a routine that means something bigger. This piece is about the threshold between having and losing. The longest short moment.</p>
 
-      <p>Guy Debord's psychogeography asks: <em>how do specific spaces shape our emotions and behaviour?</em> This project takes that question literally — it reconstructs a space that no longer exists, asking the viewer to feel its emotional weight through VR presence rather than physical navigation.</p>
+      <p>Recent research on VR and memory is part of what made this concept feel worth pursuing. A 2025 study by Danry et al. found that walking through personal spaces reconstructed in VR — spaces built from video recordings of someone's past — significantly increased the sense of <em>"travelling back,"</em> the vividness of recalled memories, and their emotional intensity, compared to simply watching the same footage on a flat screen.<span class="ref">[1]</span></p>
 
-      <p>Where the <em>dérive</em> involves moving through unknown urban space, this project inverts that movement: the user is <strong>fixed</strong> in a deeply familiar space that has become strange. Immobility as a formal choice. The room you knew becomes the room you drift through emotionally.</p>
+      <p>That idea stays with me: that a space you can stand inside does something to memory that a screen cannot. This project tries to make that into an experience — not a therapeutic tool, but an artistic one.</p>
 
-      <h3>Do-Ho Suh and the Portability of Home</h3>
+      <div class="ornament">· · ·</div>
 
-      <p>The Korean artist Do-Ho Suh creates fabric replicas of architectural spaces — homes, corridors, staircases — that can be folded, packed, and carried. His work explores how a space continues to exist in the body and memory long after it is physically gone.</p>
+      <!-- Course concepts -->
+      <h2>What I'm connecting this to</h2>
 
-      <p><em>"The Last Afternoon"</em> shares this impulse: using 3D scanning technology to <em>carry</em> a space into VR — not as documentation, but as an emotional artifact.</p>
+      <p><strong>Psychogeography.</strong> Guy Debord's psychogeography asks how specific environments shape our emotions and behaviour. This project reconstructs a space that no longer exists, asking: can you <em>feel</em> a place through VR presence the same way you once felt it in real life? The <em>dérive</em> involves drifting through unknown urban space. This project inverts that — the user is fixed, immobile, inside deeply familiar space that has become strange.</p>
 
-      <h3>Henri Cartier-Bresson's Decisive Moment</h3>
+      <p><strong>Do-Ho Suh.</strong> The Korean artist creates fabric replicas of homes, corridors, stairwells — spaces that can be folded and carried. His work is about how a space continues to live in the body long after it is physically gone. I'm doing something analogous using 3D scanning: not to document a space, but to carry it forward as an emotional artifact.</p>
 
-      <p>Cartier-Bresson believed that photography could capture a <em>decisive moment</em> — a single instant where form, content, and meaning align perfectly. But what if a decisive moment is <strong>slow</strong>? What if it lasts an entire afternoon?</p>
+      <p><strong>Presence and embodiment.</strong> The central design question is what makes the user feel genuinely <em>present</em> in this space — not just inside a picture, but inside a place. Spatial audio plays a key role here. Research by Mavridou et al. (2025) found that spatial audio enhancements in VR measurably increased both self-reported presence and physiological arousal — particularly when the audio was rich and task-relevant.<span class="ref">[2]</span> For this piece, that means the faint creak of the building, the hum of an old fan, the distant sound of traffic. Sound you don't consciously notice — until it stops.</p>
 
-      <p>This project treats the 1–5 minute MR experience as an extended decisive moment — one that the viewer inhabits rather than observes.</p>
+      <p>Importantly, embodiment in VR is a more fragile thing than presence. Bosman et al. (2025) found that while visual perspective strongly influences body ownership, audio perspective alone does not reliably change how grounded users feel in their virtual bodies.<span class="ref">[3]</span> This is actually useful design information: it tells me that the <em>visual</em> design of this space — how the room is framed, where the user stands, what they can and can't see — matters as much as the sound.</p>
 
-      <h3>Presence and Embodiment</h3>
+      <p>Gupta et al. (2025) add another layer: spatial familiarity in VR scenes improved vividness, accessibility, and emotional intensity of recalled memories.<span class="ref">[4]</span> The room in this piece is deliberately generic enough to feel like <em>anyone's</em> room — but specific enough to feel like a real one.</p>
 
-      <p>The central design question is: <em>what makes the user feel present in this space?</em></p>
+      <div class="ornament">· · ·</div>
 
-      <p>Rather than interaction or movement, I am interested in <strong>passive presence</strong> — the uncanny feeling of being placed into someone else's intimate memory. The spatial audio design will be critical here: the faint creak of the building, distant street sounds, the hum of an old fan. These ambient sound layers build <em>embodiment</em> — the sense that your body belongs in this space — without requiring any explicit interaction.</p>
+      <!-- Tools -->
+      <h2>How I plan to make it</h2>
 
-      <hr />
+      <p>The technical approach is straightforward — deliberately so. I want the process to stay in service of the feeling, not the other way around.</p>
 
-      <h2>Technical Plan</h2>
+      <div class="tool-grid">
+        <div class="tool-item">
+          <span class="tool-label">3D Scanning</span>
+          <div class="tool-name">Polycam / Reality Scan</div>
+          <div class="tool-note">Key objects — bed frame, desk, shelves</div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-label">360° Capture</span>
+          <div class="tool-name">Insta360 X3</div>
+          <div class="tool-note">Single static shot from room centre</div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-label">Sound Design</span>
+          <div class="tool-name">Phone + Rode Wireless GO</div>
+          <div class="tool-note">Room tone, distant traffic, fan hum</div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-label">Scene Assembly</span>
+          <div class="tool-name">STYLY + Blender</div>
+          <div class="tool-note">Spatial audio, 360 + 3D layering</div>
+        </div>
+      </div>
 
-      <h3>Content Acquisition Tools</h3>
+      <p>The STYLY scene layers optimised 3D scanned objects into a 360° photo backdrop, with spatial audio positioned around the space. The user is stationary — no locomotion, no interaction. The stillness is the point.</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Asset Type</th>
-            <th>Tool</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>3D scanned objects</td>
-            <td><strong>Polycam</strong> / Reality Scan</td>
-            <td>Key objects — bed frame, desk, shelves</td>
-          </tr>
-          <tr>
-            <td>360° environmental capture</td>
-            <td><strong>Insta360 X3</strong></td>
-            <td>Single static shot from centre of room</td>
-          </tr>
-          <tr>
-            <td>Ambient sound</td>
-            <td>Phone recorder + Rode Wireless GO</td>
-            <td>Room tone, distant traffic, fan hum</td>
-          </tr>
-          <tr>
-            <td>Voice-over (optional)</td>
-            <td>Recorded narration</td>
-            <td>1–2 sentences, as if thinking aloud</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="ornament">· · ·</div>
 
-      <h3>Authoring Tools</h3>
+      <!-- Challenges -->
+      <h2>What I'm worried about</h2>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Stage</th>
-            <th>Tool</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>3D model cleanup &amp; optimisation</td>
-            <td><strong>Blender</strong> (geometry cleanup, texture baking)</td>
-          </tr>
-          <tr>
-            <td>Scene assembly &amp; spatial audio</td>
-            <td><strong>STYLY</strong></td>
-          </tr>
-          <tr>
-            <td>360 video editing (if needed)</td>
-            <td>Adobe Premiere Pro (equirectangular workflow)</td>
-          </tr>
-        </tbody>
-      </table>
+      <p><strong>The cliché problem.</strong> The biggest conceptual risk is sentimentality. A piece about a childhood bedroom leaving could easily become a nostalgia reel — warm filters, sweet music, nothing to push against. I want to hold something more ambiguous: the space should feel like it could be anyone's room, not a specific person's. The sound design needs to be quiet enough that the viewer supplies their own meaning.</p>
 
-      <h3>STYLY Scene Design</h3>
+      <p><strong>Passive vs. incomplete.</strong> This is deliberately a non-interactive experience. The challenge is making that feel like a choice — not a limitation. There's a risk that viewers expect something to happen, and when nothing does, they read it as unfinished rather than intentional. Smith & Mulligan (2021) note that presence and emotional engagement in VR don't always map onto memory accuracy or felt completeness.<span class="ref">[5]</span> I take that as a reminder that the experience should be legible in the moment, not just in retrospect.</p>
 
-      <ul>
-        <li>360° photo/video as the <strong>environmental backdrop</strong></li>
-        <li>Optimised 3D scanned objects <strong>layered into the 360 space</strong> for depth and tactility</li>
-        <li><strong>Spatial audio</strong> placed at key locations (window, door, fan) to create directional sound environment</li>
-        <li>Minimal or no locomotion — the user is <strong>stationary</strong> by design</li>
-      </ul>
+      <p><strong>Technical precision.</strong> Aligning 3D scanned objects within a 360° photo backdrop is harder than it sounds — scale, lighting, and perspective all need to match convincingly. Polycam meshes come out very high-polygon; Blender cleanup is time-consuming. I need to be selective about what I scan, and what I leave implied.</p>
 
-      <hr />
+      <div class="ornament">· · ·</div>
 
-      <h2>Anticipated Challenges</h2>
-
-      <h3>Technical</h3>
-      <ul>
-        <li><strong>3D scan optimisation:</strong> Scanned meshes from Polycam are typically very high-poly. Blender retopology and texture baking are time-consuming — I need to be selective about which objects to scan.</li>
-        <li><strong>360 + 3D object alignment:</strong> Placing 3D objects accurately within a 360 photo background requires careful matching of scale, lighting, and perspective.</li>
-        <li><strong>Spatial audio in STYLY:</strong> Testing audio falloff requires iteration in-headset, depending on equipment loan availability.</li>
-      </ul>
-
-      <h3>Conceptual</h3>
-      <ul>
-        <li><strong>Avoiding nostalgia cliché:</strong> The risk is that the piece becomes sentimental rather than experiential. The design needs to hold ambiguity — this could be <em>anyone's</em> room, anyone's last afternoon.</li>
-        <li><strong>Passive vs. exploratory:</strong> This is deliberately a non-interactive experience. The challenge is making stillness feel intentional rather than incomplete.</li>
-      </ul>
-
-      <hr />
-
-      <h2>Development from Project 1</h2>
-
-      <p>Project 1 focused on capturing the <em>surface</em> qualities of a space — its visual and physical presence. Project 2 moves into the <strong>interior</strong> of a space: its emotional, temporal, and memorial dimensions. Where Project 1 asked "what does this place look like?", Project 2 asks "what does it feel like to have been here?"</p>
-
-      <p>Technically, this builds on 3D scanning and STYLY skills developed in Project 1, but extends into spatial audio design and 360 integration — areas I plan to develop specifically for this project.</p>
-
-      <div class="references">
-        <h2>References &amp; Case Studies</h2>
-        <ul>
-          <li>Debord, G. (1958). "Theory of the Dérive." <em>Situationist International</em>, No. 1.</li>
-          <li>Do-Ho Suh — <em>Home Within Home</em> series (2009–ongoing)</li>
-          <li>Cartier-Bresson, H. (1952). <em>The Decisive Moment</em>. Simon &amp; Schuster.</li>
-          <li>Char Davies — <em>Osmose</em> (1995): presence through breath-based navigation</li>
-          <li>Rachel Whiteread — <em>Ghost</em> (1990): casting the interior of domestic space</li>
-          <li>Goro Fujita — <em>A Moment in Time</em> (Quill VR animation, portrait-style life narrative)</li>
-        </ul>
+      <!-- References -->
+      <div class="ref-section">
+        <h2>References</h2>
+        <ol>
+          <li>Danry, V., Villa, E., Chan, S., &amp; Maes, P. (2025). ReLive: Walking into Virtual Reality Spaces from Video Recordings of One's Past Can Increase the Experiential Detail and Affect of Autobiographical Memories. <em>IEEE Transactions on Visualization and Computer Graphics, 31</em>, 2664–2674. <a href="https://doi.org/10.1109/tvcg.2025.3549845" target="_blank">https://doi.org/10.1109/tvcg.2025.3549845</a></li>
+          <li>Mavridou, I., Seiss, E., Ugazio, G., et al. (2025). "Did you hear that?": Software-based spatial audio enhancements increase self-reported and physiological indices on auditory presence and affect in virtual reality. <em>Frontiers in Virtual Reality, 6</em>. <a href="https://doi.org/10.3389/frvir.2025.1629908" target="_blank">https://doi.org/10.3389/frvir.2025.1629908</a></li>
+          <li>De Villiers Bosman, I., Bujić, M., Cosio, L., et al. (2025). Embodiment in virtual reality: an experiment on how visual and aural first- and third-person modes affect embodiment and mindfulness. <em>Virtual Reality, 29</em>. <a href="https://doi.org/10.1007/s10055-025-01129-w" target="_blank">https://doi.org/10.1007/s10055-025-01129-w</a></li>
+          <li>Gupta, K., Aeron, S., Zhao, J., et al. (2025). Exploring Emotional Memory Encoding and Recall in Virtual Reality. <em>CHI Conference on Human Factors in Computing Systems (Extended Abstracts)</em>. <a href="https://doi.org/10.1145/3706599.3719896" target="_blank">https://doi.org/10.1145/3706599.3719896</a></li>
+          <li>Smith, S., &amp; Mulligan, N. (2021). Immersion, presence, and episodic memory in virtual reality environments. <em>Memory, 29</em>, 983–1005. <a href="https://doi.org/10.1080/09658211.2021.1953535" target="_blank">https://doi.org/10.1080/09658211.2021.1953535</a></li>
+          <li>Debord, G. (1958). Theory of the Dérive. <em>Situationist International, No. 1</em>.</li>
+          <li>Do-Ho Suh — <em>Home Within Home</em> series (2009–ongoing).</li>
+        </ol>
       </div>
 
     </div>
