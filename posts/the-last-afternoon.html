@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     /* ---- Hero image ---- */
     .hero-image-wrap {
@@ -144,6 +145,41 @@
     @media (max-width: 580px) {
       .tool-grid { grid-template-columns: 1fr; }
     }
+
+    /* ---- FA icon in tool card ---- */
+    .tool-icon {
+      font-size: 1.3rem;
+      color: var(--gold-dim);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    /* ---- Mid-article atmospheric image ---- */
+    .article-image-wrap {
+      width: 100%;
+      margin: 2.5rem 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .article-image {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.6) saturate(0.7);
+      transition: filter 0.4s ease;
+    }
+    .article-image:hover {
+      filter: brightness(0.75) saturate(0.9);
+    }
+    .article-image-wrap figcaption {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      text-align: right;
+      padding: 0.35rem 0;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -202,6 +238,12 @@
 
       <p>That idea stays with me: that a space you can stand inside does something to memory that a screen cannot. This project tries to make that into an experience — not a therapeutic tool, but an artistic one.</p>
 
+      <figure class="article-image-wrap">
+        <img class="article-image" src="../Pic/peter-herrmann-WAcyeJllpyY-unsplash.jpg"
+          alt="Abandoned room — golden afternoon light through torn curtains, an old suitcase on the floor." />
+        <figcaption>Photo: Peter Herrmann / Unsplash</figcaption>
+      </figure>
+
       <div class="ornament">· · ·</div>
 
       <!-- Course concepts -->
@@ -226,21 +268,25 @@
 
       <div class="tool-grid">
         <div class="tool-item">
+          <i class="fa-solid fa-cube tool-icon"></i>
           <span class="tool-label">3D Scanning</span>
           <div class="tool-name">Polycam / Reality Scan</div>
           <div class="tool-note">Key objects — bed frame, desk, shelves</div>
         </div>
         <div class="tool-item">
+          <i class="fa-solid fa-circle-dot tool-icon"></i>
           <span class="tool-label">360° Capture</span>
           <div class="tool-name">Insta360 X3</div>
           <div class="tool-note">Single static shot from room centre</div>
         </div>
         <div class="tool-item">
+          <i class="fa-solid fa-wave-square tool-icon"></i>
           <span class="tool-label">Sound Design</span>
           <div class="tool-name">Phone + Rode Wireless GO</div>
           <div class="tool-note">Room tone, distant traffic, fan hum</div>
         </div>
         <div class="tool-item">
+          <i class="fa-solid fa-layer-group tool-icon"></i>
           <span class="tool-label">Scene Assembly</span>
           <div class="tool-name">STYLY + Blender</div>
           <div class="tool-note">Spatial audio, 360 + 3D layering</div>
@@ -259,6 +305,12 @@
       <p><strong>Passive vs. incomplete.</strong> This is deliberately a non-interactive experience. The challenge is making that feel like a choice — not a limitation. There's a risk that viewers expect something to happen, and when nothing does, they read it as unfinished rather than intentional. Smith & Mulligan (2021) note that presence and emotional engagement in VR don't always map onto memory accuracy or felt completeness.<span class="ref">[5]</span> I take that as a reminder that the experience should be legible in the moment, not just in retrospect.</p>
 
       <p><strong>Technical precision.</strong> Aligning 3D scanned objects within a 360° photo backdrop is harder than it sounds — scale, lighting, and perspective all need to match convincingly. Polycam meshes come out very high-polygon; Blender cleanup is time-consuming. I need to be selective about what I scan, and what I leave implied.</p>
+
+      <figure class="article-image-wrap">
+        <img class="article-image" src="../Pic/koen-sweers-jbB6SMkz1ls-unsplash.jpg"
+          alt="A lone armchair against a bare brick wall beside large frosted windows — emptied, waiting." />
+        <figcaption>Photo: Koen Sweers / Unsplash</figcaption>
+      </figure>
 
       <div class="ornament">· · ·</div>
 
