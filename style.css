@@ -6,16 +6,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:         #0e0d0b;
-  --bg-surface: #161410;
-  --bg-card:    #1c1a16;
-  --border:     rgba(255,220,150,0.10);
-  --gold:       #c8a96e;
-  --gold-dim:   rgba(200,169,110,0.5);
-  --text:       #e8e0d0;
-  --text-muted: #8a7f6e;
-  --text-dim:   #5a5040;
-  --accent:     #d4a853;
+  --bg:         #1a1520;
+  --bg-surface: #1e1827;
+  --bg-card:    #231d2e;
+  --border:     rgba(155,127,200,0.15);
+  --gold:       #9b7fc8;
+  --gold-dim:   rgba(155,127,200,0.4);
+  --text:       #e8e0f0;
+  --text-muted: #9b8faa;
+  --text-dim:   #6b5a80;
+  --accent:     #b89de0;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Inter', system-ui, sans-serif;
 }

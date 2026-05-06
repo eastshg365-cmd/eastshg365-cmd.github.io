@@ -9,6 +9,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .hero-image {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+      filter: brightness(0.75) saturate(0.8);
+    }
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        var(--bg) 100%
+      );
+      pointer-events: none;
+    }
+    .image-credit {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      text-align: right;
+      padding: 0.4rem 1rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+  </style>
 </head>
 <body>
 
@@ -30,6 +64,11 @@
       <h1>Project 2 Proposal:<br /><em>"The Last Afternoon"</em></h1>
       <p class="post-subtitle">A mixed reality experience reconstructing a moment suspended between existence and memory.</p>
     </header>
+
+    <div class="hero-image-wrap">
+      <img class="hero-image" src="../Pic/image.png" alt="An empty room with afternoon light pouring through a doorway — a single chair at the threshold." />
+    </div>
+    <p class="image-credit">Photo via Unsplash — free to use</p>
 
     <div class="post-body">
 
