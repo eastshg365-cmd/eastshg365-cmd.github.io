@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 2 Proposal: "The Last Afternoon" — MR Journal</title>
+  <meta name="description" content="An informal proposal for a mixed reality experience reconstructing a childhood bedroom on the final afternoon before moving out. CAEL5051 Mixed Reality Production, Project 2." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">MR Journal</a>
+      <span class="nav-course">CAEL5051 Mixed Reality Production</span>
+    </nav>
+  </header>
+
+  <article>
+
+    <header class="post-header">
+      <a href="../index.html" class="back-link">← Back to journal</a>
+      <div class="post-meta">
+        <span class="post-tag">Part A · Informal Proposal</span>
+        <span class="post-date">Week 10 — May 2026</span>
+      </div>
+      <h1>Project 2 Proposal:<br /><em>"The Last Afternoon"</em></h1>
+      <p class="post-subtitle">A mixed reality experience reconstructing a moment suspended between existence and memory.</p>
+    </header>
+
+    <div class="post-body">
+
+      <h2>The Concept</h2>
+
+      <p>There is a specific kind of grief that has no name — the feeling of standing in a room you are about to leave forever, knowing that every familiar object around you will soon belong to someone else. You can see everything clearly, but it already feels like a memory.</p>
+
+      <blockquote><p>"The room won't exist anymore. But for 2–3 minutes in VR, you'll be the last person to stand in it."</p></blockquote>
+
+      <p><strong>"The Last Afternoon"</strong> is a mixed reality experience set inside a childhood bedroom on the final afternoon before a family moves out. The room is intact — furniture, scattered objects, afternoon light through the window — but it is also somehow already gone. The user stands in the centre of this space, unable to interact, simply <em>present</em> in a moment that is suspended between existence and memory.</p>
+
+      <p>The experience lasts approximately <strong>2–3 minutes</strong>. There is no narrative arc, no beginning or end. Only the moment itself — ambient sound, soft light, the texture of familiar things — looping gently, like a photograph you can walk inside.</p>
+
+      <hr />
+
+      <h2>Connection to Course Concepts</h2>
+
+      <h3>Psychogeography &amp; the Emotional Weight of Space</h3>
+
+      <p>Guy Debord's psychogeography asks: <em>how do specific spaces shape our emotions and behaviour?</em> This project takes that question literally — it reconstructs a space that no longer exists, asking the viewer to feel its emotional weight through VR presence rather than physical navigation.</p>
+
+      <p>Where the <em>dérive</em> involves moving through unknown urban space, this project inverts that movement: the user is <strong>fixed</strong> in a deeply familiar space that has become strange. Immobility as a formal choice. The room you knew becomes the room you drift through emotionally.</p>
+
+      <h3>Do-Ho Suh and the Portability of Home</h3>
+
+      <p>The Korean artist Do-Ho Suh creates fabric replicas of architectural spaces — homes, corridors, staircases — that can be folded, packed, and carried. His work explores how a space continues to exist in the body and memory long after it is physically gone.</p>
+
+      <p><em>"The Last Afternoon"</em> shares this impulse: using 3D scanning technology to <em>carry</em> a space into VR — not as documentation, but as an emotional artifact.</p>
+
+      <h3>Henri Cartier-Bresson's Decisive Moment</h3>
+
+      <p>Cartier-Bresson believed that photography could capture a <em>decisive moment</em> — a single instant where form, content, and meaning align perfectly. But what if a decisive moment is <strong>slow</strong>? What if it lasts an entire afternoon?</p>
+
+      <p>This project treats the 1–5 minute MR experience as an extended decisive moment — one that the viewer inhabits rather than observes.</p>
+
+      <h3>Presence and Embodiment</h3>
+
+      <p>The central design question is: <em>what makes the user feel present in this space?</em></p>
+
+      <p>Rather than interaction or movement, I am interested in <strong>passive presence</strong> — the uncanny feeling of being placed into someone else's intimate memory. The spatial audio design will be critical here: the faint creak of the building, distant street sounds, the hum of an old fan. These ambient sound layers build <em>embodiment</em> — the sense that your body belongs in this space — without requiring any explicit interaction.</p>
+
+      <hr />
+
+      <h2>Technical Plan</h2>
+
+      <h3>Content Acquisition Tools</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Asset Type</th>
+            <th>Tool</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3D scanned objects</td>
+            <td><strong>Polycam</strong> / Reality Scan</td>
+            <td>Key objects — bed frame, desk, shelves</td>
+          </tr>
+          <tr>
+            <td>360° environmental capture</td>
+            <td><strong>Insta360 X3</strong></td>
+            <td>Single static shot from centre of room</td>
+          </tr>
+          <tr>
+            <td>Ambient sound</td>
+            <td>Phone recorder + Rode Wireless GO</td>
+            <td>Room tone, distant traffic, fan hum</td>
+          </tr>
+          <tr>
+            <td>Voice-over (optional)</td>
+            <td>Recorded narration</td>
+            <td>1–2 sentences, as if thinking aloud</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Authoring Tools</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3D model cleanup &amp; optimisation</td>
+            <td><strong>Blender</strong> (geometry cleanup, texture baking)</td>
+          </tr>
+          <tr>
+            <td>Scene assembly &amp; spatial audio</td>
+            <td><strong>STYLY</strong></td>
+          </tr>
+          <tr>
+            <td>360 video editing (if needed)</td>
+            <td>Adobe Premiere Pro (equirectangular workflow)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>STYLY Scene Design</h3>
+
+      <ul>
+        <li>360° photo/video as the <strong>environmental backdrop</strong></li>
+        <li>Optimised 3D scanned objects <strong>layered into the 360 space</strong> for depth and tactility</li>
+        <li><strong>Spatial audio</strong> placed at key locations (window, door, fan) to create directional sound environment</li>
+        <li>Minimal or no locomotion — the user is <strong>stationary</strong> by design</li>
+      </ul>
+
+      <hr />
+
+      <h2>Anticipated Challenges</h2>
+
+      <h3>Technical</h3>
+      <ul>
+        <li><strong>3D scan optimisation:</strong> Scanned meshes from Polycam are typically very high-poly. Blender retopology and texture baking are time-consuming — I need to be selective about which objects to scan.</li>
+        <li><strong>360 + 3D object alignment:</strong> Placing 3D objects accurately within a 360 photo background requires careful matching of scale, lighting, and perspective.</li>
+        <li><strong>Spatial audio in STYLY:</strong> Testing audio falloff requires iteration in-headset, depending on equipment loan availability.</li>
+      </ul>
+
+      <h3>Conceptual</h3>
+      <ul>
+        <li><strong>Avoiding nostalgia cliché:</strong> The risk is that the piece becomes sentimental rather than experiential. The design needs to hold ambiguity — this could be <em>anyone's</em> room, anyone's last afternoon.</li>
+        <li><strong>Passive vs. exploratory:</strong> This is deliberately a non-interactive experience. The challenge is making stillness feel intentional rather than incomplete.</li>
+      </ul>
+
+      <hr />
+
+      <h2>Development from Project 1</h2>
+
+      <p>Project 1 focused on capturing the <em>surface</em> qualities of a space — its visual and physical presence. Project 2 moves into the <strong>interior</strong> of a space: its emotional, temporal, and memorial dimensions. Where Project 1 asked "what does this place look like?", Project 2 asks "what does it feel like to have been here?"</p>
+
+      <p>Technically, this builds on 3D scanning and STYLY skills developed in Project 1, but extends into spatial audio design and 360 integration — areas I plan to develop specifically for this project.</p>
+
+      <div class="references">
+        <h2>References &amp; Case Studies</h2>
+        <ul>
+          <li>Debord, G. (1958). "Theory of the Dérive." <em>Situationist International</em>, No. 1.</li>
+          <li>Do-Ho Suh — <em>Home Within Home</em> series (2009–ongoing)</li>
+          <li>Cartier-Bresson, H. (1952). <em>The Decisive Moment</em>. Simon &amp; Schuster.</li>
+          <li>Char Davies — <em>Osmose</em> (1995): presence through breath-based navigation</li>
+          <li>Rachel Whiteread — <em>Ghost</em> (1990): casting the interior of domestic space</li>
+          <li>Goro Fujita — <em>A Moment in Time</em> (Quill VR animation, portrait-style life narrative)</li>
+        </ul>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <p>CAEL5051 Mixed Reality Production · 2026</p>
+  </footer>
+
+</body>
+</html>

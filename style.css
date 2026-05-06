@@ -1,0 +1,388 @@
+/* =============================================
+   CAEL5051 MR Journal — Global Styles
+   Dark, moody, editorial aesthetic
+   ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #0e0d0b;
+  --bg-surface: #161410;
+  --bg-card:    #1c1a16;
+  --border:     rgba(255,220,150,0.10);
+  --gold:       #c8a96e;
+  --gold-dim:   rgba(200,169,110,0.5);
+  --text:       #e8e0d0;
+  --text-muted: #8a7f6e;
+  --text-dim:   #5a5040;
+  --accent:     #d4a853;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ---- NAV ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14,13,11,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.nav-course {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---- HERO ---- */
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+/* ---- POSTS GRID ---- */
+.posts-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2.5rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.post-card:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-2px);
+}
+
+.post-meta {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.post-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(212,168,83,0.10);
+  padding: 0.25rem 0.7rem;
+  border-radius: 2px;
+}
+
+.post-date {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 300;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.post-title a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.post-title a:hover { color: var(--gold); }
+
+.post-excerpt {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.read-more {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.read-more:hover { opacity: 0.7; }
+
+/* ---- FOOTER ---- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* ---- BLOG POST PAGE ---- */
+.post-header {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-header .post-meta { margin-bottom: 2rem; }
+
+.post-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.post-header h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.post-header .post-subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* ---- ARTICLE BODY ---- */
+.post-body {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 6rem;
+}
+
+.post-body p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.post-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 2rem 0 0.6rem;
+}
+
+.post-body strong {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.post-body em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.post-body ul, .post-body ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.post-body li {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+
+.post-body li strong { color: var(--text); }
+
+/* Table */
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.88rem;
+}
+
+.post-body th {
+  background: var(--bg-card);
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+}
+
+.post-body td {
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+.post-body tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+/* Blockquote / Pull quote */
+.post-body blockquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 2px solid var(--gold);
+  background: var(--bg-card);
+  border-radius: 0 4px 4px 0;
+}
+
+.post-body blockquote p {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Divider */
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* References */
+.references {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.references h2 {
+  border-bottom: none;
+  margin-top: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.references ul { margin-left: 1rem; }
+
+.references li {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin: 3rem 0 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 640px) {
+  .nav { padding: 1rem 1.25rem; }
+  .nav-course { display: none; }
+  .hero { padding: 4rem 1.25rem 3rem; }
+  .posts-grid { padding: 3rem 1.25rem 4rem; }
+  .post-body, .post-header { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .post-body table { font-size: 0.78rem; }
+}
